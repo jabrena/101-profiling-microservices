@@ -15,7 +15,6 @@ import java.util.List;
 @SpringBootApplication
 public class DemoApplication {
 
-	private List<String> evilList = new ArrayList<>();
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
@@ -23,6 +22,8 @@ public class DemoApplication {
 
 	@GetMapping("/demo")
 	public ResponseEntity<?> greeting() {
+
+		List<String> evilList = new ArrayList<>();
 
 		evilList.add(RandomStringUtils.randomAlphabetic(100));
 
