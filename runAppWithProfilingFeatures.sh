@@ -8,7 +8,7 @@ echo "Script"
 set JAVA_OPTS=""
 
 # Run Jar
-java -Xms256m -Xmx256m \
+java -Xms256m -Xmx256m -verbose:gc -XX:+UseG1GC -XX:-DisableExplicitGC \
 -Dcom.sun.management.jmxremote=true \
 -Dcom.sun.management.jmxremote.port=7091 \
 -Dcom.sun.management.jmxremote.authenticate=false \
