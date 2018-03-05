@@ -11,7 +11,7 @@ set JAVA_OPTS=""
 docker build . -t profiling
 
 # Run Container
-docker run -p 8080:8080 --p 9010:9010 -p 5005:5005 profiling
+docker run -p 8080:8080 -p 9010:9010 -p 5005:5005 profiling
 
 
 
