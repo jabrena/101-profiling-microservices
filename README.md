@@ -12,13 +12,13 @@ python -m SimpleHTTPServer
 **How to run the example application**
 
 Build the application with:
- 
+
 ```bash
 $ gradlew build
 ```
 
 Create a docker image
- 
+
 ```bash
 $ docker build . -t profiling
 ```
@@ -26,7 +26,7 @@ $ docker build . -t profiling
 Run the image
 
 ```bash
-$ docker run -p 8080:8080 -p 7091:7091/udp -p 9010:9010 -p 5005:5005 profiling
+$ docker run -p 8080:8080 --p 9010:9010 -p 5005:5005 profiling
 ```
 
 Execute the demo
