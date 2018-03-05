@@ -31,9 +31,9 @@
             <section data-background="./Images/logo.jpg">
                 <h2>Agenda</h2>
                 <ol>
-                    <li>Context</li>
-                    <li>Introduction to Java profilers</li>
-                    <li>VisualVM in detail</li>
+                    <li>Java Context</li>
+                    <li>Java profilers</li>
+                    <li>Introduction to VisualVM</li>
                     <li>Profilers in Action</li>
                     <li>References</li>
                     <li>Homework</li>
@@ -42,32 +42,12 @@
             </section>
 
             <section>
-                <section data-background="./Images/rainbow.png"
-                    data-background-repeat="repeat"
-                    data-background-size="100px"
-                    style="color:black">
-                    <h2 style="color:black">Context</h2>
+                <section>
+                    <h2>Java Context</h2>
                     <ol>
-                        <li>Why humans use computers?</li>
-                        <li>Von Neumann Architecture</li>
-                        <li>Pipelines</li>
                         <li>Java Architecture</li>
                         <li>Java Memory Model</li>
-                        <li>But... Humans add Bugs on Software</li>
                     </ol>
-                </section>
-
-                <section>
-                    <h2>Why humans use computers?</h2>
-                    <p>
-                        Computers were designed to automate information processes.
-                    </p>
-                </section>
-
-                <section data-background="./Images/vonNeumann.jpg">
-                </section>
-
-                <section data-background="./Images/pipeline.png">
                 </section>
 
                 <section>
@@ -103,19 +83,20 @@
               </section>
 
               <section>
-                <h2>What kind of problems try to solve?</h2>
+                <h2>What kind of problems try to solve a Profiler?</h2>
                 <ol>
                     <li>CPU Bottleneck</li>
                     <li>Memory Leak</li>
                     <li>Multithreading problems</li>
+                    <li>Define with accuracy JVM Settings</li>
                 </ol>
               </section>
 
               <section>
                 <h2>Alternatives</h2>
                 <ol>
-                    <li>JProfiler</li>
-                    <li>YourKit</li>
+                    <li>JProfiler (Commercial Product)</li>
+                    <li>YourKit (Commercial Product)</li>
                     <li>Java VisualVM</li>
                 </ol>
               </section>
@@ -127,7 +108,7 @@
                   data-background-repeat="repeat"
                   data-background-size="200px"
                   style="color:black">
-                  <h2 style="color:black">VisualVM In detail</h2>
+                  <h2 style="color:black">Introduction to VisualVM</h2>
                   <ol>
                       <li>Connections</li>
                       <li>Overview</li>
@@ -152,21 +133,74 @@
               </section>
             </section>
 
-
-
             <section>
               <section>
                   <h2>Articles</h2>
                   <ol>
-                      <li>Link</li>
+                      <li><a href="http://www.baeldung.com/java-profilers" target="_blank">A Guide to Java Profilers</a></li>
+                      <li><a href="http://www.captaincasa.com/pdf/techdoc_memprofiling.pdf" target="_blank">Memory Profiling using Visual VM</a></li>
+                      <li><a href="https://assets.contentful.com/oxjq45e8ilak/4mfbX5FJuw0A8M00UK4uKa/ce60f2cab12408e01ce927e90ebb2f7a/Andrey_Pangin__Vadim_Tsesko._The_Art_of_JVM_Profiling.pdf" target="
+                      ">
+                        The art of profiling</a></li>
+
                   </ol>
               </section>
               <section>
                   <h2>Books</h2>
-                  <ol>
-                      <li>Link</li>
-                  </ol>
+                  <table>
+                    <tr>
+                      <td>
+                        <a href="https://www.amazon.co.uk/Java-Performance-Definitive-Scott-Oaks/dp/1449358454/ref=sr_1_fkmr1_1?ie=UTF8&qid=1520287248&sr=8-1-fkmr1&keywords=high+performance+java+oreilly" target="_blank">
+                          <img src="./Images/highPerformanceJava.jpg" />
+                        </a>
+                      </td>
+                      <td>
+                        <a href="https://www.amazon.co.uk/Java-High-Performance-applications-concurrency/dp/1787120783/ref=sr_1_2?ie=UTF8&qid=1520287203&sr=8-2&keywords=java+high+performance" target="_b
+                        ">
+                          <img src="./Images/highPerformanceJava9.jpg" />
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
               </section>
+
+              <section>
+                  <h2>Books</h2>
+                  <table>
+                    <tr>
+                      <td>
+                        <a href="https://www.amazon.co.uk/Java-Concurrency-Practice-Brian-Goetz/dp/0321349601/ref=sr_1_1?ie=UTF8&qid=1520287317&sr=8-1&keywords=java+concurrency+in+practice" target="
+                        ">
+                          <img src="./Images/javaConcurrencyInPractice.jpg" />
+                        </a>
+                      </td>
+                      <td>
+                        <a href="https://www.amazon.co.uk/Effective-Java-Third-Joshua-Bloch/dp/0134685997/ref=sr_1_2?ie=UTF8&qid=1520287317&sr=8-2&keywords=java+concurrency+in+practice" target="_blank">
+                          <img src="./Images/effectiveJava3.jpg" />
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+              </section>
+
+              <section>
+                  <h2>Books</h2>
+                  <table>
+                    <tr>
+                      <td>
+                        <a href="https://www.amazon.co.uk/Elegant-Objects-1-Yegor-Bugayenko/dp/1519166915/ref=sr_1_2?ie=UTF8&qid=1520287765&sr=8-2&keywords=elegant+objects" target="_blank">
+                          <img src="./Images/elegantObjects1.jpg" />
+                        </a>
+                      </td>
+                      <td>
+                        <a href="https://www.amazon.co.uk/Hands-Microservices-Kotlin-cloud-native-microservices-ebook/dp/B077THJ1G4/ref=sr_1_1?s=books&ie=UTF8&qid=1520287842&sr=1-1&keywords=kotlin+microservices" target="_blank">
+                          <img src="./Images/kotlinMicroservices.jpg" />
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+              </section>
+
             </section>
 
             <section>
