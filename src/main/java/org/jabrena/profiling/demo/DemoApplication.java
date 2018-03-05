@@ -17,7 +17,7 @@ import java.util.List;
 @SpringBootApplication
 public class DemoApplication {
 
-	private List<String> evilList = new ArrayList<>();
+	List<DataContainer> evilList = new ArrayList<>();
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
@@ -28,12 +28,21 @@ public class DemoApplication {
 
 		LOGGER.trace("Executing endpoint /demo");
 
-		evilList.add(RandomStringUtils.randomAlphabetic(100));
+		evilList.add(new DataContainer(RandomStringUtils.randomAlphabetic(100)));
 
 		final ResponseDemo result = new ResponseDemo("Hello World");
 		final HttpStatus status = HttpStatus.OK;
 
 		return new ResponseEntity<>(result, status);
+	}
+
+	private class DataContainer {
+
+		final private String characters;
+
+		public DataContainer(final String characters) {
+			this.characters = characters;
+		}
 	}
 
 	private class ResponseDemo {
