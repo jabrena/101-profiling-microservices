@@ -1,8 +1,8 @@
 package org.jabrena.profiling.demo.model;
 
-import lombok.Data;
+import lombok.Value;
 
-@Data
+@Value
 public class DataContainer {
     final private String characters;
 }
