@@ -6,7 +6,8 @@ echo "Script"
 ./gradlew clean build
 
 # Run Jar
-java -Xms256m -Xmx256m -verbose:gc -XX:+UseG1GC -XX:-DisableExplicitGC \
+java -Xms256m -Xmx256m \
+-verbose:gc -XX:+UseG1GC -XX:-DisableExplicitGC \
 -Djava.security.egd=file:/dev/./urandom \
 -Dcom.sun.management.jmxremote=true \
 -Dcom.sun.management.jmxremote.port=7091 \
