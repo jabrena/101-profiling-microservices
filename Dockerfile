@@ -1,10 +1,14 @@
 FROM anapsix/alpine-java
+#FROM pwittchen/alpine-java9
 MAINTAINER Juan Antonio Breña Moral
 
 ADD build/libs/*.jar app.jar
 
+# -XX:+PrintGCDetails
+
 ENTRYPOINT java -Xms256m -Xmx256m \
-    -verbose:gc -XX:+UseG1GC -XX:-DisableExplicitGC \
+    -verbose:gc  \
+    -XX:+UseG1GC -XX:-DisableExplicitGC \
     -Djava.security.egd=file:/dev/./urandom \
     -Dsun.management.jmxremote.level=FINEST \
     -Dsun.management.jmxremote.handlers=java.util.logging.ConsoleHandler \

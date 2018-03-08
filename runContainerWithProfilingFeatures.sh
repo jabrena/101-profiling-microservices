@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
-echo "Script"
+echo "Running Multiple Docker Images"
 
 # Regenerate Jar with latest changes
 ./gradlew clean build
 
-set JAVA_OPTS=""
-
-# Build Docker
+# Build Docker Java8
 docker build . -t profiling
 
 # Run Container

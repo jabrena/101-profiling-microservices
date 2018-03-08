@@ -59,11 +59,17 @@
                 <section style="color:black">
                     <h2 style="color:black">Java Context</h2>
                     <ol>
+                        <li>Java Lifecycle</li>
                         <li>Java Architecture</li>
                         <li>Java Memory Model</li>
                         <li>Java & Containers</li>
                         <li>JVM Flags</li>
                     </ol>
+                </section>
+
+                <section>
+                    <h2 style="color:black">Java Lifecycle</h2>
+                    <img data-src="./Images/java-SE-Lifecycle.jpg" width="90%">
                 </section>
 
                 <section>
@@ -84,11 +90,15 @@
                 <section>
                   <h2 style="color:black">JVM Flags</h2>
                   <pre><code class="hlbash" data-trim contenteditable>
-java -Xms256m -Xmx256m -verbose:gc -XX:+UseG1GC -XX:-DisableExplicitGC \
+java -Xms256m -Xmx256m \
+    -verbose:gc  \
+    -XX:+UseG1GC -XX:-DisableExplicitGC \
+    -Djava.security.egd=file:/dev/./urandom \
     -Dsun.management.jmxremote.level=FINEST \
     -Dsun.management.jmxremote.handlers=java.util.logging.ConsoleHandler \
     -Djava.util.logging.ConsoleHandler.level=FINEST \
     -Dcom.sun.management.jmxremote.local.only=false \
+    -Dcom.sun.management.jmxremote=true \
     -Dcom.sun.management.jmxremote.ssl=false \
     -Dcom.sun.management.jmxremote.authenticate=false \
     -Dcom.sun.management.jmxremote.port=9010 \
@@ -96,8 +106,8 @@ java -Xms256m -Xmx256m -verbose:gc -XX:+UseG1GC -XX:-DisableExplicitGC \
     -Dcom.sun.management.jmxremote.host=0.0.0.0 \
     -Djava.rmi.server.hostname=0.0.0.0 \
     -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 \
-                -server \
-                -jar -jar app.jar
+    -server \
+    -jar -jar app.jar
                   </code></pre>
                   <p>
 <a href="http://www.oracle.com/technetwork/articles/java/vmoptions-jsp-140102.html" target="_blank">More flags...</a>
@@ -171,10 +181,17 @@ java -Xms256m -Xmx256m -verbose:gc -XX:+UseG1GC -XX:-DisableExplicitGC \
               <h2>Profilers in Action</h2>
               <ol>
                   <li>Scenario 1: Memory</li>
-                  <li>Scenario 2: CPU</li>
               </ol>
           </section>
 
+          <section data-background="./Images/logo.jpg">
+            <h2>Summary</h2>
+            <ol>
+                <li>Pipelines are not a Silver Bullet</li>
+                <li>Dynamic Scenarios could hide CPU/Memory problems</li>
+                <li>Proling is a task to be included in the Springs</li>
+            </ol>
+          </section>
 
             <section>
               <section data-background="./Images/books.jpg">
