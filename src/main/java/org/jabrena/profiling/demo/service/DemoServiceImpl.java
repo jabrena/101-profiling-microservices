@@ -11,7 +11,6 @@ import java.util.concurrent.ThreadLocalRandom;
 @Service
 public class DemoServiceImpl implements DemoService {
 
-    List<DataContainer> evilList = new ArrayList<>();
 
     @Override
     public DataContainer getToken() {
@@ -19,6 +18,8 @@ public class DemoServiceImpl implements DemoService {
     }
 
     private DataContainer smartSeedComputing(){
+
+        List<DataContainer> evilList = new ArrayList<>();
 
         for(int i = 1; i <= 10; i++) {
             evilList.add(new DataContainer(RandomStringUtils.randomAlphabetic(100)));
