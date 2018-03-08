@@ -1,3 +1,4 @@
+#FROM xlate/openj9
 FROM anapsix/alpine-java
 #FROM pwittchen/alpine-java9
 MAINTAINER Juan Antonio Breña Moral
