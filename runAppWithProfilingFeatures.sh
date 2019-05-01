@@ -7,10 +7,24 @@ echo "Script"
 
 # -XX:+PrintGCDetails
 
+# -XX:+UnlockExperimentalVMOptions -XX:+UseShenandoahGC
+# -XX:+UnlockExperimentalVMOptions -XX:+UseZGC
+# -XX:+UseG1GC
+# -XX:+UseParallelGC
+# -XX:+UseConcMarkSweepGC
+# -XX:+PrintGCDetails
+
 # Run Jar
-java -Xms256m -Xmx256m \
+java -version
+java -Xms256m -Xmx512m \
 -verbose:gc  \
--XX:+UseG1GC -XX:-DisableExplicitGC \
+-XX:-DisableExplicitGC \
+-XX:+UnlockExperimentalVMOptions \
+-XX:+UnlockExperimentalVMOptions -XX:+UseShenandoahGC \
+-XX:OnError="echo Katakroker" \
+-XX:OnOutOfMemoryError="echo Katakroker OutOf Memory" \
+-XX:HeapDumpPath=./java_pid.hprof \
+-XX:-HeapDumpOnOutOfMemoryError \
 -Djava.security.egd=file:/dev/./urandom \
 -Dcom.sun.management.jmxremote=true \
 -Dcom.sun.management.jmxremote.port=7091 \
