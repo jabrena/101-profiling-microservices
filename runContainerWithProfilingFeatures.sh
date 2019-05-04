@@ -8,8 +8,32 @@ echo "Running Multiple Docker Images"
 # Build Docker Java8
 docker build . -t profiling
 
+export JAVA_OPTS="$JAVA_OPTS\
+ -Xms256m\
+ -Xmx512m\
+ -verbose:gc\
+ -XX:-DisableExplicitGC\
+ -XX:HeapDumpPath=./java_pid.hprof\
+ -XX:-HeapDumpOnOutOfMemoryError\
+ -Djava.security.egd=file:/dev/./urandom\
+ -Dcom.sun.management.jmxremote.rmi.port=7092\
+ -Dcom.sun.management.jmxremote=true\
+ -Dcom.sun.management.jmxremote.port=7092\
+ -Dcom.sun.management.jmxremote.ssl=false\
+ -Dcom.sun.management.jmxremote.authenticate=false\
+ -Dcom.sun.management.jmxremote.local.only=false\
+ -Djava.rmi.server.hostname=localhost\
+ -Djava.awt.headless=true"
+
 # Run Container
-docker run --name profiling -p 8080:8080 -p 9010:9010 -p 5005:5005 profiling
+docker run -p 8080:8080 -p 7092:7092 -e JAVA_OPTS="$JAVA_OPTS" --name profiling profiling
+
+#Logs
+#docker logs profiling
+
+#Stop/Remove
+#docker stop profiling
+#docker rm profiling
 
 
 

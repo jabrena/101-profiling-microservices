@@ -19,7 +19,6 @@ java -version
 java -Xms256m -Xmx512m \
 -verbose:gc  \
 -XX:-DisableExplicitGC \
--XX:+UnlockExperimentalVMOptions \
 -XX:+UnlockExperimentalVMOptions -XX:+UseShenandoahGC \
 -XX:OnError="echo Katakroker" \
 -XX:OnOutOfMemoryError="echo Katakroker OutOf Memory" \
@@ -30,5 +29,5 @@ java -Xms256m -Xmx512m \
 -Dcom.sun.management.jmxremote.port=7091 \
 -Dcom.sun.management.jmxremote.authenticate=false \
 -Dcom.sun.management.jmxremote.ssl=false \
--server \
+-Djava.awt.headless=true \
 -jar ./build/libs/101-profiling-microservices-0.1.0-SNAPSHOT.jar
