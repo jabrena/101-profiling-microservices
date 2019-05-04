@@ -5,12 +5,19 @@ echo "Running Multiple Docker Images"
 # Regenerate Jar with latest changes
 ./gradlew clean build
 
+#Stop/Remove
+docker stop profiling
+docker rm profiling
+
 # Build Docker Java8
 docker build . -t profiling
 
 export JAVA_OPTS="$JAVA_OPTS\
+ -XX:+PrintFlagsFinal\
+ -XX:+UnlockExperimentalVMOptions\
+ -XX:+UseCGroupMemoryLimitForHeap\
  -Xms256m\
- -Xmx512m\
+ -Xmx256m\
  -verbose:gc\
  -XX:-DisableExplicitGC\
  -XX:HeapDumpPath=./java_pid.hprof\
@@ -31,9 +38,6 @@ docker run -p 8080:8080 -p 7092:7092 -e JAVA_OPTS="$JAVA_OPTS" --name profiling 
 #Logs
 #docker logs profiling
 
-#Stop/Remove
-#docker stop profiling
-#docker rm profiling
 
 
 
